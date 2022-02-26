@@ -1,0 +1,35 @@
+>LISTO7
+>L.
+   10 REM > BASREAD
+   20 PROCread("BASDATA")
+   30 PROCread("CDATA")
+   40 END
+   50 DEFPROCread(F$)
+   60 F%=OPENIN(F$)
+   70 IF F%=0 THEN PRINT"Unable to open input file ";F$:ENDPROC
+   80 ONERRORREPORT:PRINT" at line ";ERL:CLOSE#F%:ENDPROC
+   90 V=0
+  100 PROCcheck(V)
+  110 PROCseries(1)
+  120 PROCseries(-1)
+  130 CLOSE#F%
+  140 ENDPROC
+  150 DEFPROCseries(S)
+  160 I%=125
+  170 V=S
+  180 FOR E%=0 TO I%
+  190   PROCcheck(V)
+  200   V=V*2
+  210   NEXT
+  220 V=S
+  230 FOR E%=0 TO I%
+  240   PROCcheck(V)
+  250   V=V/2
+  260   NEXT
+  270 ENDPROC
+  280 DEFPROCcheck(E)
+  290 INPUT#F%,V
+  300 IF V<>E THENPRINT"Mismatch, ";V;"<>";E;" on ";F$;" at ";PTR#F%
+  310 ENDPROC
+>*sp.
+

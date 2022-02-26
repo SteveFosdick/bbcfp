@@ -1,0 +1,12 @@
+>L.
+   10 REM > BASPRT
+   20 INPUT "Filename",F$
+   30 F%=OPENIN(F$)
+   40 IFF%=0THENPRINT"Unable to open file ";F$:END
+   50 REPEAT
+   60   INPUT#F%,N
+   70   PRINTN
+   80   UNTILEOF#F%
+   90 CLOSE#F%
+>*sp.
+

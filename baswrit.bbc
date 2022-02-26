@@ -1,0 +1,27 @@
+>LISTO7
+>L.
+   10 REM > BASWRIT
+   20 F%=OPENOUT("BASDATA")
+   30 IF F%=0 THEN PRINT"Unable to open output file":END
+   40 ONERRORREPORT:PRINT" at line ";ERL:CLOSE#F%:END
+   50 V=0
+   60 PRINT#F%,V
+   70 PROCwrite(1)
+   80 PROCwrite(-1)
+   90 CLOSE#F%
+  100 END
+  110 DEFPROCwrite(S)
+  120 I%=125
+  130 V=S
+  140 FOR E%=0 TO I%
+  150   PRINT#F%,V
+  160   V=V*2
+  170   NEXT
+  180 V=S
+  190 FOR E%=0 TO I%
+  200   PRINT#F%,V
+  210   V=V/2
+  220   NEXT
+  230 ENDPROC
+>*sp.
+
